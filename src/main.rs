@@ -126,7 +126,55 @@ fn chat_type(){
     println!("a is {a}")
 }
 
+fn return_square(i: i32) -> i32{
+    i*i// without semicolon it will return value
+}
+
+fn function_in_rust(){
+    let a: i32 = return_square(5);
+    println!("a {a}");
+}
+
+fn if_case_flow(){
+    let a = 5;
+    if a < 5{
+        println!("lessthan five");
+    } else if a > 5{
+        println!("greaterthan five");
+    }
+    else {
+        println!("equal to five");
+    }
+
+    // single line if condition
+    let b = if a == 5 { 1 } else { 0 };// here both shd be of same data type
+    println!("b {b}");
+}
+
+fn sum_of_natural_nos_int(till: i32){
+    let mut counter: i32 = 0;
+    let mut sum: i32 = 0;
+    let result = loop{
+        counter += 1;
+        sum = sum + counter;
+        if till == counter{
+            break sum;
+        }    
+    };
+    println!("result {result}")
+}
+
+fn loops_in_rust(){
+    sum_of_natural_nos_int(5);
+}
+
+fn control_flow(){
+    // if_case_flow();
+    loops_in_rust();
+}
 
 fn main() {
-    data_types()
+    // data_types();
+    // function_in_rust();
+    control_flow();
 }
